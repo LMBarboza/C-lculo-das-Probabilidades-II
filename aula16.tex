@@ -1,0 +1,70 @@
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{ amssymb }
+\usepackage[margin=1in,footskip=0.25in]{geometry}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\newtheorem{thm}{Teorema}
+\newtheorem{lemma}[thm]{Lema}
+\newtheorem{corollary}{Corolário}
+\newtheorem{remark}{Obs}
+\newtheorem{proposition}{Proposição}
+\newtheorem{example}{Exemplo}
+\renewcommand*{\proofname}{Proof}
+\newtheorem{definition}{Definição}
+
+\title{Aula 16}
+\date{}
+\theoremstyle{definition}
+\begin{document}
+\maketitle
+
+\section*{Resumo}
+
+\begin{itemize}
+  \item Funções de vetores aleatórios
+  \item Esperança de funções de vetores aleatórios
+  \item Casos: Contínuo, discreto, misto
+\end{itemize}
+
+\section{Funções de vetores aleatórios}
+
+
+  \begin{definition}
+    Seja \(X = (X_1, \dots, X_{k})\), um vetor aleatório k-dimensional e
+    \(H\colon \mathbb{R}^{k}\to \mathbb{R}^{m}\) contínua por partes,
+    então \(H(X) = H(X_{1}, \dots, X_{k}) = (H_{1}(X), \dots, H_{m}(X))\) é um vetor aleatório m-dimensional, e \(H_{j}\colon \mathbb{R}^{k}\to \mathbb{R}\) são variáveis aleatórias.
+  \end{definition}
+
+  \section{Esperança de funções de vetores aleatórios}
+  \begin{remark}
+          \(\mathbb{E}[|H(X)|] < \infty \iff \mathbb{E}[H(X)]\) existe
+  \end{remark}
+  \begin{itemize}
+    \item Caso discreto: \(X = (X_{1},\dots, X_{k})\) com valores possíveis \((x^{(n)})^{N}_{n=1}\), \(N \in \mathbb{N}\cup {\infty} \Rightarrow \mathbb{E}[H(X)] = \sum\limits_{n=1}^{N}H(x^{(n)})\mathbb{P}(X = x^{(n)})  \)
+    \item Caso contínuo: \(\mathbb{E}[H(X)] = \int\limits_{-\infty}^{+\infty}\dots \int\limits_{-\infty}^{+\infty}H(x_{1},\dots,x_{k})f_{X}(x_{1},\dots, x_{k})dx_{1}\dots dx_{k}\)
+          \begin{remark}
+            \(\mathbb{E}[|H(X)|]<\infty \Rightarrow \mathbb{E}[H(X)]\) não depende da ordem de integração.
+          \end{remark}
+  \end{itemize}
+  \begin{proposition}
+    \(X = (X_{1},\dots, X_{k})\) vetor aleatório, \(F_{X}= \alpha_{d}F_{d} + \alpha_{c}F_{c} + \alpha_{s}F_{s}\) com \(\alpha_{d} + \alpha_{c}+ \alpha_{s}= 1 \) e \(\alpha_{d},\alpha_{c},\alpha{s} \geq 0 \Rightarrow \exists\) vetores aleatórios \[X_{d}=(X_{1d},\dots,X_{kd})\]
+    \[X_{c}=(X_{1c},\dots,X_{kc})\]
+    \[X_{s}=(X_{1s},\dots,X_{ks})\] \(\theta \sim Ber(\alpha_{d}) \) e \(\theta^{2} \sim Ber(\frac{\alpha_{c}}{\alpha_{c}+\alpha_{s}}) |  X \sim \theta X_{d} + (1-\theta)\theta^{2}X_{c}+ (1-\theta)(1-\theta^{2})X_{s} \implies \) \[\forall H\colon \mathbb{R}^{k} \to \mathbb{R}^{k}, \mathbb{E}[H(X)] = \alpha_{d}\mathbb{E}[H(X_{d})] + \alpha_{c}\mathbb{E}[H(X_{c})] + \alpha_{s}\mathbb{E}[H(X_{s})]  \]
+    \begin{corollary}
+      X, Y independentes \( \Rightarrow \mathbb{E}[H(X)G(Y)] = \mathbb{E}[H(X)]\mathbb{E}[G(Y)], \forall H \colon \mathbb{R}^{k} \to \mathbb{R} \wedge G \colon \mathbb{R}^{m} \to \mathbb{R}\) contínuas por partes.
+
+    \end{corollary}
+
+  \end{proposition}
+
+
+
+
+
+
+\end{document}

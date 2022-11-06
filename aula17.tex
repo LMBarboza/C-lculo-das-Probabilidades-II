@@ -1,0 +1,48 @@
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{ amssymb }
+\usepackage[margin=1in,footskip=0.25in]{geometry}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\newtheorem{thm}{Teorema}
+\newtheorem{lemma}[thm]{Lema}
+\newtheorem{corollary}{Corolário}
+\newtheorem{remark}{Obs}
+\newtheorem{proposition}{Proposição}
+\newtheorem{example}{Exemplo}
+\renewcommand*{\proofname}{Proof}
+\newtheorem{definition}{Definição}
+
+\title{Aula17}
+\date{}
+\begin{document}
+\maketitle
+\section*{Resumo}
+    \begin{itemize}
+      \item Correlação de variáveis aleatórias
+      \item Propriedades da correlação
+      \item Distribuição de funções de vetores aleatórios
+      \item Integral com mudança de variáveis
+    \end{itemize}
+\section{Correlação de variáveis aleatórias}
+\begin{definition}
+  Sejam X,Y variáveis aleatórias com variância finita, \[\rho_{X,Y} = Cor(X,Y) = \frac{Cov(X,Y)}{DP(X)DP(Y)},\]
+  onde \(Cov(X,Y) = \mathbb{E}[XY]-\mathbb{E}[X]\mathbb{E}[Y] \wedge\ DP(X) = \sqrt{Var(X)} \)
+\end{definition}
+
+\begin{proposition}[propriedades da correlação]
+  \begin{enumerate}
+    \item  \(-1\leq \rho_{X,Y}\leq 1 \)
+    \item X,Y independentes \(\Rightarrow \rho_{X,Y} = 0\)
+    \item \(\rho_{X,Y} = 1 \Rightarrow \exists\ a > 0 \wedge b \in \mathbb{R}\ |\ Y = aX + b\)
+    \item \(\rho_{X,Y} = -1 \Rightarrow \exists\ a < 0 \wedge b \in \mathbb{R}\ |\ Y = aX + b\)
+    \end{enumerate}
+
+\end{proposition}
+
+
+\end{document}
